@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="shortcut icon" type="image/png" href="count.png" />
+<link rel="stylesheet" href="style.css">
+
+<title>Counter</title>
+
+<body>
+
+
+    <div class="container">
+        <div class="counter">
+            <h1 id="heading">COUNTER</h1>
+            <h1 id="count">0</h1>
+            
+            <div class="buttons">
+                <button class="myButton" id="increase">Increase</button>
+                <button class="myButton" id="decrease">Decrease</button>
+                <button class="myButton" id="reset">Reset</button>
+                <button class="myButton" id="increaseBy2">2+</button>
+                <button class="myButton" id="decreaseBy2">-2</button>
+                <button class="myButton" id="increaseBy5">5</button>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var count = 0;
+        document.querySelector("#increase").addEventListener("click", () => {
+            changeCount(1);
+        });
+        document.querySelector("#decrease").addEventListener("click", () => {
+            changeCount(-1);
+        });
+        document.querySelector("#increaseBy2").addEventListener("click", () => {
+            changeCount(2);
+        });
+        document.querySelector("#decreaseBy2").addEventListener("click", () => {
+            changeCount(-2);
+        });
+        document.querySelector("#increaseBy5").addEventListener("click", () => {
+            changeCount(5);
+        });
+        document.querySelector("#reset").addEventListener("click", () => {
+            resetCount()
+                
+            });
+        function resetCount(){
+            count = 0;
+            document.querySelector('#count').textContent = count;
+        }
+        
+        changeCount = (number) => {
+            count += number;
+            document.querySelector("#count").textContent = count;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
